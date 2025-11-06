@@ -45,3 +45,7 @@ app.get("/basicquery",(req,res)=>{
         res.send(results);
     });
 });
+
+
+
+
