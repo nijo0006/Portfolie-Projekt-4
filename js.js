@@ -1,10 +1,15 @@
 const express = require("express");
+//npm install mysql2 --save
 const mysql = require("mysql2");
+//npm install cors --save
+const cors = require("cors");
+const {query} = require("express");
 
 const app = express();
 const port = 8080;
-const cors = require("cors");
+
 app.use(cors());
+app.use(express.json())
 
 // Opret MySQL-forbindelse med fejlhåndtering
 const connection = mysql.createConnection({

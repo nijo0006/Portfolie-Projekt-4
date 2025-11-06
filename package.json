@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-4---online-music-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nijo0006/Portfolie-Projekt-4.git"
+  },
+  "private": true
