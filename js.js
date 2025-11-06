@@ -3,6 +3,8 @@ const mysql = require("mysql2");
 
 const app = express();
 const port = 8080;
+const cors = require("cors");
+app.use(cors());
 
 // Opret MySQL-forbindelse med fejlhåndtering
 const connection = mysql.createConnection({
