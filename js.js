@@ -56,14 +56,26 @@ app.get("/basicquery",(req,res)=>{
 
 app.get("/revenue",(req,res)=>{
     connection.query(`SELECT
-                          BillingCountry AS country,
-                          COUNT(*) AS Invoices,
-                          COUNT(DISTINCT CustomerId) AS Customers,
-                          ROUND(SUM(Total), 2) AS Revenue,
-                          ROUND(AVG(Total), 2) AS AvgOrderValue
-                      FROM Invoice
-                      GROUP BY BillingCountry
-                      ORDER BY Revenue DESC;`,
+    BillingCountry AS country,
+    COUNT(*) AS Invoices,
+    COUNT(DISTINCT CustomerId) AS Customers,
+    ROUND(SUM(Total), 2) AS Revenue,
+    ROUND(AVG(Total), 2) AS AvgOrderValue
+    FROM Invoice
+    GROUP BY BillingCountry
+    ORDER BY Revenue DESC;`,
+        (err,results)=>{
+            res.send(results);
+        });
+});
+
+app.get("/genre",(req,res)=>{
+    connection.query(`SELECT g.Name AS Genre, SUM(il.UnitPrice * il.Quantity) AS TotalSales
+                      FROM InvoiceLine il
+                               JOIN Track t ON il.TrackId = t.TrackId
+                               JOIN Genre g ON t.GenreId = g.GenreId
+                      GROUP BY g.GenreId
+                      ORDER BY TotalSales DESC;`,
         (err,results)=>{
             res.send(results);
         });
