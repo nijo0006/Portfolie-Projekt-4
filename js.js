@@ -54,5 +54,21 @@ app.get("/basicquery",(req,res)=>{
 });
 
 
+app.get("/revenue",(req,res)=>{
+    connection.query(`SELECT
+                          BillingCountry AS country,
+                          COUNT(*) AS Invoices,
+                          COUNT(DISTINCT CustomerId) AS Customers,
+                          ROUND(SUM(Total), 2) AS Revenue,
+                          ROUND(AVG(Total), 2) AS AvgOrderValue
+                      FROM Invoice
+                      GROUP BY BillingCountry
+                      ORDER BY Revenue DESC;`,
+        (err,results)=>{
+            res.send(results);
+        });
+});
+
+
 
 
