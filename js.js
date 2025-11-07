@@ -40,43 +40,42 @@ app.get("/hello", (req, res) => {
 });
 
 
-app.get("/basicquery",(req,res)=>{
+app.get("/basicquery", (req, res) => {
     connection.query(`SELECT i.BillingCountry, g.Name AS Genre, SUM(il.Quantity) AS QuantitySold
-    FROM InvoiceLine il
-    JOIN Invoice i ON il.InvoiceId = i.InvoiceId
-    JOIN Track t ON il.TrackId = t.TrackId
-    JOIN Genre g ON t.GenreId = g.GenreId
-    GROUP BY i.BillingCountry, g.Name
-    ORDER BY i.BillingCountry, QuantitySold DESC;`,
-    (err,results)=>{
-        res.send(results);
-    });
-});
-
-
-app.get("/revenue",(req,res)=>{
-    connection.query(`SELECT
-    BillingCountry AS country,
-    COUNT(*) AS Invoices,
-    COUNT(DISTINCT CustomerId) AS Customers,
-    ROUND(SUM(Total), 2) AS Revenue,
-    ROUND(AVG(Total), 2) AS AvgOrderValue
-    FROM Invoice
-    GROUP BY BillingCountry
-    ORDER BY Revenue DESC;`,
-        (err,results)=>{
+                      FROM InvoiceLine il
+                               JOIN Invoice i ON il.InvoiceId = i.InvoiceId
+                               JOIN Track t ON il.TrackId = t.TrackId
+                               JOIN Genre g ON t.GenreId = g.GenreId
+                      GROUP BY i.BillingCountry, g.Name
+                      ORDER BY i.BillingCountry, QuantitySold DESC limit 3;`,
+        (err, results) => {
             res.send(results);
         });
 });
 
-app.get("/genre",(req,res)=>{
+
+app.get("/revenue", (req, res) => {
+    connection.query(`SELECT BillingCountry             AS country,
+                             COUNT(*)                   AS Invoices,
+                             COUNT(DISTINCT CustomerId) AS Customers,
+                             ROUND(SUM(Total), 2)       AS Revenue,
+                             ROUND(AVG(Total), 2)       AS AvgOrderValue
+                      FROM Invoice
+                      GROUP BY BillingCountry
+                      ORDER BY Revenue DESC limit 3;`,
+        (err, results) => {
+            res.send(results);
+        });
+});
+
+app.get("/genre", (req, res) => {
     connection.query(`SELECT g.Name AS Genre, SUM(il.UnitPrice * il.Quantity) AS TotalSales
                       FROM InvoiceLine il
                                JOIN Track t ON il.TrackId = t.TrackId
                                JOIN Genre g ON t.GenreId = g.GenreId
                       GROUP BY g.GenreId
-                      ORDER BY TotalSales DESC;`,
-        (err,results)=>{
+                      ORDER BY TotalSales DESC limit 3;`,
+        (err, results) => {
             res.send(results);
         });
 });
