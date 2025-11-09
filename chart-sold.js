@@ -3,14 +3,14 @@
 const ctx2 = document.getElementById("chart2").getContext("2d");
 const chart2 = new Chart(ctx2,
     {
-        type: "bar",
+        type: "pie",
         data: {
-            labels: ["🇺🇸", "🇨🇦", "🇧🇷"],
+            labels: ["🇺🇸", "🇨🇦", "🇫🇷"],
             datasets: [
                 {
-                    label: "Mest rock solgt",
-                    data: [157, 107, 81],
-                    backgroundColor: ["red", "lightgrey", "lightgrey"],
+                    label: "Højeste salg pr land",
+                    data: [523.06, 303.96, 195.10],
+                    backgroundColor: ["red", "green", "yellow"],
                     borderRadius: 12,
                     borderWidth: 2,
                     borderColor: "black",
@@ -27,7 +27,7 @@ const chart2 = new Chart(ctx2,
             plugins: {
                 title: {
                     display: true,
-                    text: "Rock Salg Top 3",
+                    text: "Top 3 lande med mest salg (Revenue)",
                     font: { weight: "bold", size: 24 },
                     anchor: "end",
                     align: "start",
