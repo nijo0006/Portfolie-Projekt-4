@@ -8,7 +8,7 @@ body {
 header {
     text-align: center;
     padding: 2rem;
-    background-color: lightskyblue; /* blød lilla */
+    background-color: lightskyblue;
     color: white;
 }
 
@@ -24,4 +24,8 @@ footer {
     background: #4f46e5;
     color: white;
     font-size: 0.9rem;
+}
+
+.main-body{
+    background: linear-gradient(to bottom, lightskyblue, cornflowerblue);
 }

@@ -27,7 +27,7 @@ const chart3 = new Chart(ctx3,
             plugins: {
                 title: {
                     display: true,
-                    text: "Top 3 genre med højeste salg",
+                    text: "Top 3 genre med højeste salg (Revenue)",
                     font: { weight: "bold", size: 24 },
                     anchor: "end",
                     align: "start",
