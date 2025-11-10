@@ -5,7 +5,7 @@
     {
         type: "bar",
         data: {
-            labels: ["🇺🇸", "🇨🇦", "🇧🇷"],
+            labels: ["USA🇺🇸", "Canada🇨🇦", "Brasilien🇧🇷"],
             datasets: [
                 {
                     label: "Mest rock solgt",
