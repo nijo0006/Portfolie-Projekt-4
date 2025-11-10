@@ -3,14 +3,14 @@
 const ctx3 = document.getElementById("chart3").getContext("2d");
 const chart3 = new Chart(ctx3,
     {
-        type: "doughnut",
+        type: "bar",
         data: {
             labels: ["Rock🎸", "Latin💃", "Metal🤘"],
             datasets: [
                 {
                     label: "Højeste salg pr land",
                     data: [826.65, 382.14, 261.36],
-                    backgroundColor: ["red", "green", "yellow"],
+                    backgroundColor: ["#990000", "#CC0000", "#FF3333"],
                     borderRadius: 12,
                     borderWidth: 2,
                     borderColor: "black",
@@ -20,6 +20,7 @@ const chart3 = new Chart(ctx3,
             ],
         },
         options: {
+            indexAxis: "y",
             animation: {
                 duration: 1000,
                 easing: "easeOutBounce", // sjov bounce-effekt
@@ -35,6 +36,7 @@ const chart3 = new Chart(ctx3,
             },
             scales: {
                 x: {
+                    grid: {display: false},
                     ticks: {
                         font: {
                             size: 20,
@@ -43,6 +45,7 @@ const chart3 = new Chart(ctx3,
                 },
                 y: {
                     beginAtZero: true,
+                    grid: {display: false}
                 },
             },
         },

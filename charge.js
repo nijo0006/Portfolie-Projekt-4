@@ -10,7 +10,7 @@
                 {
                     label: "Mest rock solgt",
                     data: [157, 107, 81],
-                    backgroundColor: ["red", "green", "yellow"],
+                    backgroundColor: ["#990000", "#CC0000", "#FF3333"],
                     borderRadius: 12,
                     borderWidth: 2,
                     borderColor: "black",
@@ -43,6 +43,7 @@
                 },
                 y: {
                     beginAtZero: true,
+                    grid: {display: false},
                 },
             },
         },
