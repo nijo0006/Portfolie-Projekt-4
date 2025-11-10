@@ -3,7 +3,6 @@ body {
     margin: 0;
     background-color: #f5f5f5;
     color: #333;
-
 }
 
 header {
@@ -44,5 +43,24 @@ footer {
 #chart3{
     display: block;
     margin: 0 auto;
+}
 
+.intro{
+    margin-bottom: 10rem;
+}
+.graf1{
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+}
+.graf2{
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+}
+.graf3{
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+}
+.konklusion{
+    margin-top: 10rem;
+    margin-bottom: 20rem;
 }
