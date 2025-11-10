@@ -44,7 +44,7 @@ footer {
     display: block;
     margin: 0 auto;
 }
-
+/*
 .intro{
     margin-bottom: 10rem;
 }
@@ -66,4 +66,10 @@ footer {
 }
 #chart, #chart2, #chart3{
     padding-bottom: 30px;
+}*/
+
+hr{
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+
 }
