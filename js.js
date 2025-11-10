@@ -40,14 +40,18 @@ app.get("/hello", (req, res) => {
 });
 
 
-app.get("/basicquery", (req, res) => {
-    connection.query(`SELECT i.BillingCountry, g.Name AS Genre, SUM(il.Quantity) AS QuantitySold
+app.get("/soldrock", (req, res) => {
+    connection.query(`SELECT
+                          i.BillingCountry AS Country,
+                          SUM(il.Quantity) AS UnitsSold
                       FROM InvoiceLine il
-                               JOIN Invoice i ON il.InvoiceId = i.InvoiceId
-                               JOIN Track t ON il.TrackId = t.TrackId
-                               JOIN Genre g ON t.GenreId = g.GenreId
-                      GROUP BY i.BillingCountry, g.Name
-                      ORDER BY i.BillingCountry, QuantitySold DESC limit 3;`,
+                               JOIN Invoice i   ON il.InvoiceId = i.InvoiceId
+                               JOIN Track t     ON il.TrackId   = t.TrackId
+                               JOIN Genre g     ON t.GenreId    = g.GenreId
+                      WHERE g.Name = 'Rock'
+                      GROUP BY i.BillingCountry
+                      ORDER BY UnitsSold DESC
+                          LIMIT 3;`,
         (err, results) => {
             res.send(results);
         });

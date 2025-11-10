@@ -1,16 +1,14 @@
 [
   {
-    "BillingCountry": "Argentina",
-    "Genre": "Rock",
-    "QuantitySold": "9"
+    "Country": "USA",
+    "UnitsSold": "157"
   },
   {
-    "BillingCountry": "Argentina",
-    "Genre": "Alternative & Punk",
-    "QuantitySold": "9"
+    "Country": "Canada",
+    "UnitsSold": "107"
   },
   {
-    "BillingCountry": "Argentina",
-    "Genre": "Latin",
-    "QuantitySold": "8"
-  }]
+    "Country": "Brazil",
+    "UnitsSold": "81"
+  }
+]
