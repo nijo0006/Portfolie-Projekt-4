@@ -64,3 +64,6 @@ footer {
     margin-top: 10rem;
     margin-bottom: 20rem;
 }
+#chart, #chart2, #chart3{
+    padding-bottom: 30px;
+}
