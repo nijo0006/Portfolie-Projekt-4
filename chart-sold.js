@@ -5,7 +5,7 @@ const chart2 = new Chart(ctx2,
     {
         type: "polarArea",
         data: {
-            labels: ["USA🇺🇸", "Canada🇨🇦", "Frankrig🇫🇷"],
+            labels: ["USA🇺🇸 ", "Canada🇨🇦", "Frankrig🇫🇷"],
             datasets: [
                 {
                     label: "Højeste salg pr land",
