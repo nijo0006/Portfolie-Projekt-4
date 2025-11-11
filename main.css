@@ -7,14 +7,16 @@ body {
 
 header {
     text-align: center;
-    padding: 2rem;
+    padding: 6rem;
     background-color: lightskyblue;
     color: white;
+    font-size: 50px;
 }
+
 
 main {
     max-width: 900px;
-    margin: 2rem auto;
+    margin: 20rem auto;
     padding: 0 1rem;
 
 }
@@ -68,8 +70,8 @@ footer {
     padding-bottom: 30px;
 }*/
 
-hr{
+section{
     margin-top: 10rem;
-    margin-bottom: 20rem;
+    margin-bottom: 25rem;
 
 }
