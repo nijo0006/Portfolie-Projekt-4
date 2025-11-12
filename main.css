@@ -1,3 +1,8 @@
+p, h3 {
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
