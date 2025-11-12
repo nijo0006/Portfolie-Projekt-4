@@ -109,16 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             align: "start",
                         },
                     },
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { font: { size: 20 } },
-                        },
-                        y: {
-                            beginAtZero: true,
-                            grid: { display: false },
-                        },
-                    },
+
                 },
             });
         })
