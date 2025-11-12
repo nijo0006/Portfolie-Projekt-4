@@ -25,6 +25,9 @@ main {
     padding: 0 1rem;
 
 }
+main h1{
+    font-size: 32px;
+}
 
 .main-body{
     background: linear-gradient(to bottom, lightskyblue, cornflowerblue); /* Laver en glidende overgang af farven*/
@@ -58,3 +61,7 @@ section{
 .main-header{
     margin-top: -50px;
 }
+.konklusion h1{
+    font-size: 32px;
+}
+
