@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('https://raw.githubusercontent.com/nijo0006/Portfolie-Projekt-4/refs/heads/main/data-genre.json')
         .then(response => response.json())
         .then(data => {
-            console.log("✅ Genre data hentet:", data);
 
             // Her udpakker vi data fra JSON og tilføjer emojies for at gøre det mere visuelt
             //Vi laver en const der hedder labels, som vi senere kan bruge til at bygge vores chart
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             // Vi laver en const til values, som vi senere kan bruge til at bygge vores chart
-            // map går igennem hvert element arrayet, og returnere et nyt array som vi bestemmer. Som så er number
+            // map går igennem hvert element arrayet, og returnerer et nyt array som vi bestemmer. Som så er number
             const values = data.map(item => Number(item.TotalSales));
 
 
