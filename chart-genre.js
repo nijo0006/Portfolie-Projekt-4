@@ -1,4 +1,4 @@
-//   CHART 3    -    TOP 3 GENRE MEST SOLGT
+//   CHART 1    -    TOP 3 GENRE MEST SOLGT
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('https://raw.githubusercontent.com/nijo0006/Portfolie-Projekt-4/refs/heads/main/data-genre.json')

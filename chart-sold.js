@@ -1,4 +1,4 @@
-//  CHART 2  --  TTOP 3 LANDE MED MEST SALG
+//  CHART 3  --  TOP 3 LANDE MED MEST SALG
 
 
 document.addEventListener("DOMContentLoaded", () => {

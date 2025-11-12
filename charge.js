@@ -1,10 +1,15 @@
-// CHART 1  -   TOP 3 LANDE FLEST SOLGTE ROCKALBUMS
+// CHART 2  -   TOP 3 LANDE FLEST SOLGTE ROCKALBUMS
 
+//DOMContentLoaded sikrer, at JavaScript først kører, når HTML'en/DOM'en er loaded
     document.addEventListener("DOMContentLoaded", () => {
+
+        //Vi fetcher dataen fra vores json fil. Linket er fra GitHub hvor vores endpoint ligger.
         fetch("https://raw.githubusercontent.com/nijo0006/Portfolie-Projekt-4/refs/heads/main/data-sold.json")
             .then(response => response.json())
             .then(data => {
-                // === Udpak data fra JSON ===
+
+                // Her udpakker vi data fra JSON og tilføjer emojies for at gøre det mere visuelt med flag
+                //Vi laver en const der hedder labels, som vi senere kan bruge til at bygge vores chart
                 const labels = data.map(item => {
                     if (item.Country === "USA") return "USA🇺🇸";
                     if (item.Country === "Canada") return "Canada🇨🇦";
@@ -12,24 +17,19 @@
                     return item.Country;
                 });
 
+// Vi laver en const til values, som vi senere kan bruge til at bygge vores chart
                 const values = data.map(item => Number(item.UnitsSold));
 
-                // === CHART 1 === (samme styling som din statiske version)
+              // Vi bygger vores chart. Kilde: Gode noter fra undervisningen / Chart.js.org
                 const ctx = document.getElementById("chart").getContext("2d");
-
-                // Fjern eventuelt tidligere chart, hvis siden genindlæses dynamisk (slet?)
-                if (Chart.getChart(ctx)) {
-                    Chart.getChart(ctx).destroy();
-                }
-
                 new Chart(ctx, {
-                    type: "bar",
+                    type: "bar", //vi vælger en bar chart, da vi synes, at det vil visualisere dataen bedst
                     data: {
-                        labels: labels,
+                        labels: labels, //consten fra før
                         datasets: [
                             {
-                                label: "Mest rock solgt",
-                                data: values,
+                                label: "Flest solgte rockalbums",
+                                data: values, // consten fra før
                                 backgroundColor: ["#990000", "#CC0000", "#FF3333"],
                                 borderRadius: 12,
                                 borderWidth: 2,
@@ -46,11 +46,9 @@
                         },
                         plugins: {
                             title: {
-                                display: true,
+                                display: true, // viser titlen
                                 text: "Top 3 lande med flest solgte rock albums",
                                 font: { weight: "bold", size: 24 },
-                                anchor: "end",
-                                align: "start",
                             },
                         },
                         scales: {
@@ -61,13 +59,14 @@
                             },
                             y: {
                                 beginAtZero: true,
-                                grid: { display: false },
+                                grid: { display: false }, // fjerner gitteret
 
                             },
                         },
                     },
                 });
             })
-            .catch(error => console.error("❌ Fejl ved hentning af data:", error));
+            //Fejlkode, hvis noget går galt
+            .catch(error => console.error("Fejl ved hentning af data:", error));
     });
 
