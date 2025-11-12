@@ -21,54 +21,24 @@ main {
 
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #4f46e5;
-    color: white;
-    font-size: 0.9rem;
-}
-
 .main-body{
     background: linear-gradient(to bottom, lightskyblue, cornflowerblue);
-
 
 }
 #chart{
     display: block;
     margin: 0 auto;
  }
+
 #chart2{
     display: block;
     margin: 0 auto;
 }
+
 #chart3{
     display: block;
     margin: 0 auto;
 }
-/*
-.intro{
-    margin-bottom: 10rem;
-}
-.graf1{
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-}
-.graf2{
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-}
-.graf3{
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-}
-.konklusion{
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-}
-#chart, #chart2, #chart3{
-    padding-bottom: 30px;
-}*/
 
 section{
     margin-top: 10rem;
