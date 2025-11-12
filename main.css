@@ -49,3 +49,7 @@ section{
 .pic{
     width: 50rem;
 }
+
+.main-header{
+    margin-top: -50px;
+}
