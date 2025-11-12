@@ -1,24 +1,27 @@
+// De pakker vi har installeret for at få Javascript til at snakke sammen med SQL og insomnia.
+
 const express = require("express");
-//npm install mysql2 --save
+//npm install mysql2 --save (skrevet i terminalen)
 const mysql = require("mysql2");
-//npm install cors --save
+//npm install cors --save (skrevet i terminalen)
 const cors = require("cors");
 const {query} = require("express");
-
 const app = express();
+
+// Den lokale host vi brugte, for at querie direkte i webstorm, og få svaret ud i insomnia
 const port = 8080;
 
 app.use(cors());
 app.use(express.json())
 
-// Opret MySQL-forbindelse med fejlhåndtering
+// For at kunne connecte til GitHub skrev vi vores koder hver især i configurations. På den måde kunne vi connecte til MySQL og bruge queriesne
 const connection = mysql.createConnection({
     host: process.env.DBHOST,
     user: process.env.DBUSER,
     password: process.env.DBPASSWORD,
     database: process.env.DBDATABASE
 });
-
+// Fejlmeddelelser, sådan at vi bedre kunne vide, hvilken specifik fejl der var. Kilde: chatGPT.com
 connection.connect((err) => {
     if (err) {
         console.error("Fejl ved forbindelse til databasen:", err.message);
@@ -32,12 +35,7 @@ connection.connect((err) => {
     }
 });
 
-// Simpel route
-app.get("/hello", (req, res) => {
-    console.log("Hey alle sammen");
-    res.send("Hello Everyone");
-});
-
+// QUERIES
 
 app.get("/soldrock", (req, res) => {
     connection.query(`SELECT /*Vælger de kolonner, vi vil vise i resultatet.*/
