@@ -57,7 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
                             align: "start",
                         },
                     },
-
+                    scales: {
+                        r: {  // r-aksen i polarArea
+                            ticks: {
+                                callback: function (value) {
+                                    return `$${value}`; // Tilføjer $ foran tallet
+                                },
+                            },
+                        },
+                    },
                 },
             });
         })
