@@ -26,7 +26,6 @@ connection.connect((err) => {
     } else {
         console.log("Forbundet til MySQL databasen!");
 
-        // Start serveren efter database er oprettet
         app.listen(port, () => {
             console.log(`Server kører på port ${port}`);
         });
