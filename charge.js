@@ -17,7 +17,8 @@
                     return item.Country;
                 });
 
-// Vi laver en const til values, som vi senere kan bruge til at bygge vores chart
+                // Vi laver en const til values, som vi senere kan bruge til at bygge vores chart
+                // map går igennem hvert element i arrayet, og returnerer et nyt array som vi bestemmer. Som så er number.
                 const values = data.map(item => Number(item.UnitsSold));
 
               // Vi bygger vores chart. Kilde: Gode noter fra undervisningen / Chart.js.org
