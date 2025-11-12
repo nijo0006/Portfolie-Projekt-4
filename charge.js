@@ -1,4 +1,4 @@
-// CHART 1  -   TOP 3 LANDE MEST ROCK SOLGT
+// CHART 1  -   TOP 3 LANDE FLEST SOLGTE ROCKALBUMS
 
     document.addEventListener("DOMContentLoaded", () => {
         fetch("https://raw.githubusercontent.com/nijo0006/Portfolie-Projekt-4/refs/heads/main/data-sold.json")
@@ -62,6 +62,7 @@
                             y: {
                                 beginAtZero: true,
                                 grid: { display: false },
+
                             },
                         },
                     },

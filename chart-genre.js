@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return item.Genre;
             });
 
-            // Values (TotalSales) som tal
+            // Values (TotalSales) som tal og i dollars
             const values = data.map(item => Number(item.TotalSales));
+
+
 
             // === Bar Chart (horizontal) ===
             const ctx3 = document.getElementById("chart3").getContext("2d");
@@ -60,7 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: { font: { size: 20 } },
+                            ticks: { font: { size: 20 },
+                                callback: function (value) {
+                                    return `$${value}`;}
+                                    },
                         },
                         y: {
                             beginAtZero: true,
