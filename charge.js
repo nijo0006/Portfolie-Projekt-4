@@ -47,7 +47,7 @@
                         plugins: {
                             title: {
                                 display: true,
-                                text: "Top 3 lande med mest solgt rock",
+                                text: "Top 3 lande med flest solgte rock albums",
                                 font: { weight: "bold", size: 24 },
                                 anchor: "end",
                                 align: "start",
